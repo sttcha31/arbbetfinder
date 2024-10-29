@@ -7,9 +7,9 @@ class Bookie {
     public:
         Bookie(double odd1in, double odd2in) {};
 
-        pair<double, double> get_odds() {};
-        pair<double, double> get_prob() {};
+        pair<double, double> get_odds();
+        pair<double, double> get_prob();
 
 };
 
-double odds_to_prob(double odd){};
+double odds_to_prob(double odd);
