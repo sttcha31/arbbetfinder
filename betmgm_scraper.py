@@ -22,7 +22,7 @@ def get_game_links():
     #CHECK: following line's XPATH might chance from day to day
     table = wait.until(EC.presence_of_element_located((By.XPATH, './/*[@id="main-view"]/ms-widget-layout/ms-widget-slot/ms-composable-widget/ms-widget-slot/ms-tabbed-grid-widget/ms-grid/div/ms-event-group')))
     games = table.find_elements(By.XPATH, "./*")
-    with open("sample.txt", "w") as file: 
+    with open("mgmgames.txt", "w") as file: 
         for game in games:
             file.write(game.find_element(By.CLASS_NAME, "grid-event-wrapper").find_element(By.TAG_NAME, "a").get_attribute("href") + "\n")
 
@@ -54,6 +54,6 @@ def write_to_csv(overunders):
 # get_player_overunder('https://sports.mi.betmgm.com/en/sports/events/brooklyn-nets-at-orlando-magic-16517249?tab=score&market=Players', "Assists")
 # get_player_overunder('https://sports.mi.betmgm.com/en/sports/events/brooklyn-nets-at-orlando-magic-16517249?tab=score&market=Players', "3-Pointers")
 
-get_game_links()
+# get_game_links()
 
 
