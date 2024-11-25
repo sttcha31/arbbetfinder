@@ -156,7 +156,7 @@ void get_links(const string& module_name, const string& function_name) {
 int main() {
 
     Py_Initialize();
-
+    PyEval_InitThreads();
     PyObject* sysPath = PySys_GetObject("path");
     PyObject* currentDir = PyUnicode_FromString(".");
     PyList_Append(sysPath, currentDir);
@@ -171,16 +171,16 @@ int main() {
         while (getline(fin, line)) {
             cout << line << endl;
             vector<string> args = {line, "points"};
-            call_python_function("betmgm_scraper", "get_player_overunder", args);
-            // threads.push_back(thread(call_python_function, "betmgm_scraper", "get_player_overunder", args));
+            // call_python_function("betmgm_scraper", "get_player_overunder", args);
+            threads.push_back(thread(call_python_function, "betmgm_scraper", "get_player_overunder", args));
         }
         fin.close(); 
     }
 
-    // for (auto& th : threads) {
-    //     cout << "hi" << endl;
-    //     th.join();
-    // }
+    for (auto& th : threads) {
+        cout << "hi" << endl;
+        th.join();
+    }
 
     Py_Finalize();
 
