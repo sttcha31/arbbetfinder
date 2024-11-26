@@ -70,8 +70,8 @@ if __name__ == '__main__':
     tasks = list()
     tasks.append(("https://sports.mi.betmgm.com/en/sports/events/chicago-bulls-at-washington-wizards-16529719", "Points"))
     tasks.append(("https://sports.mi.betmgm.com/en/sports/events/chicago-bulls-at-washington-wizards-16529719", "Assists"))
-    # tasks.append((link, "Rebound"))
-    # tasks.append((link, "ThreePointer"))
+    tasks.append(("https://sports.mi.betmgm.com/en/sports/events/chicago-bulls-at-washington-wizards-16529719", "Rebound"))
+    tasks.append(("https://sports.mi.betmgm.com/en/sports/events/chicago-bulls-at-washington-wizards-16529719", "ThreePointer"))
     with multiprocessing.Pool(processes=len(tasks)) as pool:
         results = pool.map(process_task, tasks)
 
