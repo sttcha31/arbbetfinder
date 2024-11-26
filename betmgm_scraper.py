@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 op = webdriver.ChromeOptions()
-op.add_argument('--headless=new')
+# op.add_argument('--headless=new')
 op.add_argument("--window-size=1280,700")
 op.add_argument("--enable-features=SameSiteByDefaultCookies,CookiesWithoutSameSiteMustBeSecure")
 op.add_argument("--enable-javascript")
@@ -52,7 +52,7 @@ def process_task(task):
 def write_to_csv(overunders):
     return
 
-get_player_overunder("https://sports.mi.betmgm.com/en/sports/events/toronto-raptors-at-detroit-pistons-16529711", "Points")
+# get_player_overunder("https://sports.mi.betmgm.com/en/sports/events/toronto-raptors-at-detroit-pistons-16529711", "Points")
 # def main():
 #     tasks = list()
 #     links = get_game_links()
@@ -72,4 +72,4 @@ get_player_overunder("https://sports.mi.betmgm.com/en/sports/events/toronto-rapt
 
 
 
-main()
+get_game_links()
