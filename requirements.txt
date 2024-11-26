@@ -19,6 +19,7 @@ pyparsing==3.2.0
 pyppeteer==2.0.0
 pyquery==2.0.1
 PySocks==1.7.1
+PyVirtualDisplay==3.0
 requests==2.32.3
 requests-html==0.10.0
 selenium==4.25.0
