@@ -170,7 +170,7 @@ int main() {
         while (getline(fin, line)) {
             cout << line << endl;
             vector<string> args = {line, "points"};
-            call_python_function("betmgm_scraper_firefox", "get_player_overunder", args);
+            call_python_function("betmgm_scraper", "get_player_overunder", args);
             // threads.push_back(thread(call_python_function, "betmgm_scraper", "get_player_overunder", args));
         }
         fin.close(); 

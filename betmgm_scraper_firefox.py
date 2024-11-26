@@ -30,6 +30,8 @@ def get_player_overunder(link, category):
     overunders = {}
     op = Options()
     op.headless = True
+    op.set_preference("network.cookie.cookieBehavior", 0)  # 0 allows all cookies
+    op.set_preference("javascript.enabled", True)
 
     display = Display(visible=0, size=(1920, 1080))
     display.start()
@@ -64,16 +66,15 @@ def write_to_csv(overunders):
     return
 
 # get_player_overunder("https://sports.mi.betmgm.com/en/sports/events/chicago-bulls-at-washington-wizards-16529719", "Points")
-# def main():
-#     tasks = list()
-#     links = get_game_links()
-#     for link in links:
-#         tasks.append((link, "Points"))
-#         tasks.append((link, "Assists"))
-#         tasks.append((link, "Rebound"))
-#         tasks.append((link, "ThreePointer"))
-#     with multiprocessing.Pool(processes=len(tasks)) as pool:
-#         results = pool.map(process_task, tasks)
+if __name__ == '__main__':
+    tasks = list()
+    tasks.append(("https://sports.mi.betmgm.com/en/sports/events/chicago-bulls-at-washington-wizards-16529719", "Points"))
+    tasks.append(("https://sports.mi.betmgm.com/en/sports/events/chicago-bulls-at-washington-wizards-16529719", "Assists"))
+    # tasks.append((link, "Rebound"))
+    # tasks.append((link, "ThreePointer"))
+    with multiprocessing.Pool(processes=len(tasks)) as pool:
+        results = pool.map(process_task, tasks)
+
 
 # def process_task(task):
 #     link, category = task
@@ -81,6 +82,6 @@ def write_to_csv(overunders):
 
 
 
-
+# main("https://sports.mi.betmgm.com/en/sports/events/chicago-bulls-at-washington-wizards-16529719")
 
 # get_game_links()

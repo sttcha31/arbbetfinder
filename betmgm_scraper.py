@@ -4,10 +4,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 op = webdriver.ChromeOptions()
-op.add_argument('--headless')
-op.add_argument("--window-size=1920,1080")
-op.add_argument('--disable-gpu')
-op.add_argument('--no-sandbox')
+# op.add_argument('--headless')
+# op.add_argument("--window-size=1920,1080")
+# op.add_argument('--disable-gpu')
+# op.add_argument('--no-sandbox')
 op.add_argument("--enable-features=SameSiteByDefaultCookies,CookiesWithoutSameSiteMustBeSecure")
 op.add_argument("--enable-javascript")
 
@@ -55,22 +55,18 @@ def process_task(task):
 def write_to_csv(overunders):
     return
 
-get_player_overunder("https://sports.mi.betmgm.com/en/sports/events/chicago-bulls-at-washington-wizards-16529719", "Points")
-# def main():
-#     tasks = list()
-#     links = get_game_links()
-#     for link in links:
-#         tasks.append((link, "Points"))
-#         tasks.append((link, "Assists"))
-#         tasks.append((link, "Rebound"))
-#         tasks.append((link, "ThreePointer"))
-#     with multiprocessing.Pool(processes=len(tasks)) as pool:
-#         results = pool.map(process_task, tasks)
+if __name__ == '__main__':
+    tasks = list()
+    tasks.append(("https://sports.mi.betmgm.com/en/sports/events/chicago-bulls-at-washington-wizards-16529719", "Points"))
+    tasks.append(("https://sports.mi.betmgm.com/en/sports/events/chicago-bulls-at-washington-wizards-16529719", "Assists"))
+    # tasks.append((link, "Rebound"))
+    # tasks.append((link, "ThreePointer"))
+    with multiprocessing.Pool(processes=len(tasks)) as pool:
+        results = pool.map(process_task, tasks)
 
-# def process_task(task):
-#     link, category = task
-#     get_player_overunder(link, category)
 
+
+# main("https://sports.mi.betmgm.com/en/sports/events/chicago-bulls-at-washington-wizards-16529719")
 
 
 
