@@ -153,6 +153,44 @@ void get_links(const string& module_name, const string& function_name) {
     Py_DECREF(pModule);
 }
 
+void call_python_multiprocessing(const std::string& link) {
+    // Initialize Python interpreter
+
+    // Import the Python module
+    PyObject* pModule = PyImport_ImportModule("betmgm_scraper");  // Ensure the script name matches
+    if (!pModule) {
+        PyErr_Print();
+        std::cerr << "Failed to load Python module." << std::endl;
+        return;
+    }
+
+    // Get the Python function `run_multiprocessing`
+    PyObject* pFunc = PyObject_GetAttrString(pModule, "run_multiprocessing");
+    if (!pFunc || !PyCallable_Check(pFunc)) {
+        PyErr_Print();
+        std::cerr << "Failed to find Python function." << std::endl;
+        Py_DECREF(pModule);
+        return;
+    }
+
+    // Convert the C++ string `link` to a Python string
+    PyObject* pArgs = PyTuple_Pack(1, PyUnicode_FromString(link.c_str()));
+
+    // Call the Python function
+    PyObject* pResult = PyObject_CallObject(pFunc, pArgs);
+    if (!pResult) {
+        PyErr_Print();
+        std::cerr << "Error calling Python function." << std::endl;
+    } else {
+        std::cout << "Python function executed successfully." << std::endl;
+    }
+
+    // Clean up
+
+    // Finalize Python interpreter
+    Py_Finalize();
+}
+
 int main() {
 
     Py_Initialize();
@@ -160,21 +198,21 @@ int main() {
     PyObject* currentDir = PyUnicode_FromString(".");
     PyList_Append(sysPath, currentDir);
     Py_DECREF(currentDir);
-    // vector<string> args = {"https://sports.mi.betmgm.com/en/sports/events/minnesota-timberwolves-at-boston-celtics-16529704", "points"};
-    // call_python_function("betmgm_scraper", "get_player_overunder", args);
-
+    // get_links("betmgm_gamelinks", "get_game_links");
     // vector<thread> threads;
-    ifstream fin("mgmgames.txt");
-    string line;
-    if(fin.is_open()) {
-        while (getline(fin, line)) {
-            cout << line << endl;
-            vector<string> args = {line, "points"};
-            call_python_function("betmgm_scraper", "get_player_overunder", args);
-            // threads.push_back(thread(call_python_function, "betmgm_scraper", "get_player_overunder", args));
-        }
-        fin.close(); 
-    }
+    // ifstream fin("mgmgames.txt");
+    // string line;
+    call_python_multiprocessing("https://sports.mi.betmgm.com/en/sports/events/utah-jazz-at-portland-trail-blazers-16694450");
+    // if(fin.is_open()) {
+    //     while (getline(fin, line)) {
+    //         cout << line << endl;
+    //         // vector<string> args = {line, "points"};
+    //         call_python_multiprocessing(line);
+    //         // call_python_function("betmgm_scraper", "get_player_overunder", args);
+    //         // threads.push_back(thread(call_python_function, "betmgm_scraper", "get_player_overunder", args));
+    //     }
+    //     fin.close(); 
+    // }
 
     // for (auto& th : threads) {
     //     cout << "hi" << endl;
