@@ -40,15 +40,16 @@ def get_player_overunder(link, category):
 
     content = table.find_elements(By.XPATH, "./*")
     for i in range(1, len(content)):
-        playername = content[i].find_element(By.CLASS_NAME, "player-props-player-name").text
-        points = content[i].find_element(By.CLASS_NAME, "option-pick").find_element(By.CLASS_NAME, "option-indicator").find_element(By.CLASS_NAME, "name").text[2:]
-        over = content[i].find_element(By.CLASS_NAME, "option-pick").find_element(By.CLASS_NAME, "option-indicator").find_element(By.CLASS_NAME, "value").find_element(By.TAG_NAME, 'ms-font-resizer').find_element(By.CLASS_NAME, "custom-odds-value-style").text
-        under = content[i].find_element(By.CLASS_NAME, "option-pick").find_element(By.CLASS_NAME, "option-indicator").find_element(By.CLASS_NAME, "value").find_element(By.TAG_NAME, 'ms-font-resizer').find_element(By.CLASS_NAME, "custom-odds-value-style").text
-        overunders[playername] = (points, over, under)
-    print(category)
+        overunder = {}
+        overunder["sportsbook"] = "BetMGM"
+        overunder["player_name"] = content[i].find_element(By.CLASS_NAME, "player-props-player-name").text
+        overunder["category"] = category
+        overunder["value"]= content[i].find_element(By.CLASS_NAME, "option-pick").find_element(By.CLASS_NAME, "option-indicator").find_element(By.CLASS_NAME, "name").text[2:]
+        overunder["over"] = content[i].find_element(By.CLASS_NAME, "option-pick").find_element(By.CLASS_NAME, "option-indicator").find_element(By.CLASS_NAME, "value").find_element(By.TAG_NAME, 'ms-font-resizer').find_element(By.CLASS_NAME, "custom-odds-value-style").text
+        overunder["under"]= content[i].find_element(By.CLASS_NAME, "option-pick").find_element(By.CLASS_NAME, "option-indicator").find_element(By.CLASS_NAME, "value").find_element(By.TAG_NAME, 'ms-font-resizer').find_element(By.CLASS_NAME, "custom-odds-value-style").text
+        overunders.append()
     print(overunders)
     write_to_csv(overunders)
-    return overunders
 
 def process_task(task):
     link, category = task
