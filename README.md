@@ -6,7 +6,7 @@ Arbitrage Bet Finder
 # Usage
 
 1. Open Amazon AWS EC2 Instance of instance type t2.2xlarge and of OS Amazon Linux
-2. **ONLY NEDES TO BE DONE ONCE**: 
+2. **ONLY NEEDS TO BE DONE ONCE**: 
     - Clone github Project
 
         ```
@@ -30,4 +30,7 @@ Arbitrage Bet Finder
     ```
     cd arbbetfinder
     ```
-4. 
+4. Do this
+    ```
+    Xvfb :99 & export DISPLAY=:99
+    ```
