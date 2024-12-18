@@ -60,10 +60,10 @@ def write_to_csv(data):
 
 if __name__ == '__main__':
     tasks = list()
-    tasks.append(("https://sports.va.betmgm.com/en/sports/events/minnesota-timberwolves-at-boston-celtics-16529704", "Points"))
-    tasks.append(("https://sports.va.betmgm.com/en/sports/events/minnesota-timberwolves-at-boston-celtics-16529704", "Assists"))
-    tasks.append(("https://sports.va.betmgm.com/en/sports/events/minnesota-timberwolves-at-boston-celtics-16529704", "Rebound"))
-    tasks.append(("https://sports.va.betmgm.com/en/sports/events/minnesota-timberwolves-at-boston-celtics-16529704", "ThreePointer"))
+    tasks.append(("https://sports.va.betmgm.com/en/sports/events/new-orleans-pelicans-at-houston-rockets-16687910", "Points"))
+    tasks.append(("https://sports.va.betmgm.com/en/sports/events/new-orleans-pelicans-at-houston-rockets-16687910", "Assists"))
+    tasks.append(("https://sports.va.betmgm.com/en/sports/events/new-orleans-pelicans-at-houston-rockets-16687910", "Rebound"))
+    tasks.append(("https://sports.va.betmgm.com/en/sports/events/new-orleans-pelicans-at-houston-rockets-16687910", "ThreePointer"))
     with multiprocessing.Pool(processes=len(tasks)) as pool:
         results = pool.map(process_task, tasks)
 
