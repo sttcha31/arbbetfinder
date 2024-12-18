@@ -29,7 +29,7 @@ def get_game_links():
     
 
 def get_player_overunder(link, category):
-    overunders = {}
+    overunders = []
     driver = webdriver.Chrome(options=op)
     driver.get(link+"?market=Players:"+category)
     wait = WebDriverWait(driver, 20)
@@ -47,7 +47,7 @@ def get_player_overunder(link, category):
         overunder["value"]= content[i].find_element(By.CLASS_NAME, "option-pick").find_element(By.CLASS_NAME, "option-indicator").find_element(By.CLASS_NAME, "name").text[2:]
         overunder["over"] = content[i].find_element(By.CLASS_NAME, "option-pick").find_element(By.CLASS_NAME, "option-indicator").find_element(By.CLASS_NAME, "value").find_element(By.TAG_NAME, 'ms-font-resizer').find_element(By.CLASS_NAME, "custom-odds-value-style").text
         overunder["under"]= content[i].find_element(By.CLASS_NAME, "option-pick").find_element(By.CLASS_NAME, "option-indicator").find_element(By.CLASS_NAME, "value").find_element(By.TAG_NAME, 'ms-font-resizer').find_element(By.CLASS_NAME, "custom-odds-value-style").text
-        overunders.append()
+        overunders.append(overunder)
     print(overunders)
     write_to_csv(overunders)
 
