@@ -45,8 +45,8 @@ def get_player_overunder(link, category):
         overunder["player_name"] = content[i].find_element(By.CLASS_NAME, "player-props-player-name").text
         overunder["category"] = category
         overunder["value"]= content[i].find_element(By.CLASS_NAME, "option-pick").find_element(By.CLASS_NAME, "option-indicator").find_element(By.CLASS_NAME, "name").text[2:]
-        overunder["over"] = content[i].find_element(By.CLASS_NAME, "option-pick").find_element(By.CLASS_NAME, "option-indicator").find_element(By.CLASS_NAME, "value").find_element(By.TAG_NAME, 'ms-font-resizer').find_element(By.CLASS_NAME, "custom-odds-value-style").text
-        overunder["under"]= content[i].find_element(By.CLASS_NAME, "option-pick").find_element(By.CLASS_NAME, "option-indicator").find_element(By.CLASS_NAME, "value").find_element(By.TAG_NAME, 'ms-font-resizer').find_element(By.CLASS_NAME, "custom-odds-value-style").text
+        overunder["over"] = content[i].find_elements(By.CLASS_NAME, "option-pick")[0].find_element(By.CLASS_NAME, "option-indicator").find_element(By.CLASS_NAME, "value").find_element(By.TAG_NAME, 'ms-font-resizer').find_element(By.CLASS_NAME, "custom-odds-value-style").text
+        overunder["under"]= content[i].find_elements(By.CLASS_NAME, "option-pick")[1].find_element(By.CLASS_NAME, "option-indicator").find_element(By.CLASS_NAME, "value").find_element(By.TAG_NAME, 'ms-font-resizer').find_element(By.CLASS_NAME, "custom-odds-value-style").text
         overunders.append(overunder)
     print(overunders)
     write_to_csv(overunders)
@@ -61,6 +61,10 @@ def write_to_csv(data):
         writer.writerows(data)
 
 if __name__ == '__main__':
+    headers = ["Sports Book", "Player Name", "Category", "Value", "Over", "Under"]
+    with open("odds.csv", mode="w", newline="") as file:
+        writer = csv.writer(file)
+        writer.writerow(headers)
     tasks = list()
     tasks.append(("https://sports.va.betmgm.com/en/sports/events/new-orleans-pelicans-at-houston-rockets-16687910", "Points"))
     tasks.append(("https://sports.va.betmgm.com/en/sports/events/new-orleans-pelicans-at-houston-rockets-16687910", "Assists"))
