@@ -47,6 +47,7 @@ def get_player_overunder(link, category):
         overunders[playername] = (points, over, under)
     print(category)
     print(overunders)
+    write_to_csv(overunders)
     return overunders
 
 def process_task(task):
