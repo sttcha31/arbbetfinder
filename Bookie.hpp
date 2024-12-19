@@ -4,8 +4,9 @@ using namespace std;
 class Bookie {
     private:
         pair<double, double> odds;
+        string sports_book;
     public:
-        Bookie(double odd1in, double odd2in) {};
+        Bookie(string & sports_book_in, double odd1_in, double odd2_in) {};
 
         pair<double, double> get_odds();
         pair<double, double> get_prob();

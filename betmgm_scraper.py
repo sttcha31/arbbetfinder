@@ -61,7 +61,7 @@ def write_to_csv(data):
         writer.writerows(data)
 
 if __name__ == '__main__':
-    headers = ["Sports Book", "Player Name", "Category", "Value", "Over", "Under"]
+    headers = ["sports_book", "player_name", "category", "value", "over", "under"]
     with open("odds.csv", mode="w", newline="") as file:
         writer = csv.writer(file)
         writer.writerow(headers)

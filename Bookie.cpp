@@ -3,7 +3,7 @@
 using namespace std;
 
 
-Bookie::Bookie(double odd1in, double odd2in) : odds(odd1in, odd2in) {};
+Bookie::Bookie(string & sports_book_in, double odd1_in, double odd2_in) : sports_book(sports_book_in), odds(odd1_in, odd2_in) {};
 
 pair<double, double> Bookie::get_odds() {
     return odds;
