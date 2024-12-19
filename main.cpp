@@ -14,6 +14,9 @@ class ArbFinder {
             hash_map_builder(odds_file_in);
         }
 
+        //REQUIRES: valid filename in correct formatting
+        //MODIFIES: hash_map
+        //EFFECT: reads in all odds data from filename and places it into a hash_map
         void hash_map_builder(string & filename) {
             csvstream csvin(filename);
             map<string, string> row;
@@ -26,7 +29,7 @@ class ArbFinder {
                     int over = stoi(row["over"]);
                     int under = stoi(row["under"]);
 
-                    hash_map[{category, value}].push_back(Bookie(sports_book, over, under));
+                    hash_map[{category, value}].push_back(Bookie(sports_book, player_name, over, under));
                 }  
 
             } catch (const csvstream_exception &e){
@@ -44,7 +47,8 @@ class ArbFinder {
                         if(is_arb((*it).second[combination.first], (*it).second[combination.second])){
                             cout << "Arbitrage Opportunity Found Between " << (*it).second[combination.first].get_sports_book() 
                             << "and" << (*it).second[combination.second].get_sports_book() <<  endl;
-                            cout << "hi" << endl;
+                            cout << (*it).second[combination.first].get_player_name() << ": " << (*it).first.second << (*it).first.first << endl;
+                            money_distribution((*it).second[combination.first], (*it).second[combination.second]);
                         }
                     }
                 }
