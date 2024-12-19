@@ -8,8 +8,9 @@ class Bookie {
     public:
         Bookie(string & sports_book_in, double odd1_in, double odd2_in) {};
 
-        pair<double, double> get_odds();
-        pair<double, double> get_prob();
+        pair<double, double> get_odds() const;
+        pair<double, double> get_prob() const;
+        string get_sports_book() const;
 
 };
 

@@ -1,5 +1,5 @@
 #include "Bookie.hpp"
-#include <thread>
+#include <string>
 #include <iostream>
 #include "csvstream.hpp"
 #include <fstream>
@@ -37,13 +37,43 @@ class ArbFinder {
         //REQUIRES: Nothing
         //MODIFIES: Nothing
         //EFFECT: Prints what bets should be taken based on the data in the hash_map
-        void bet_finder() {}
+        void bet_finder() {
+            for(auto it=hash_map.begin(); it!=hash_map.end(); ++it){
+                if((*it).second.size()>1){
+                    for(auto combination : combinations((*it).second.size())){
+                        if(is_arb((*it).second[combination.first], (*it).second[combination.second])){
+                            cout << "Arbitrage Opportunity Found Between " << (*it).second[combination.first].get_sports_book() 
+                            << "and" << (*it).second[combination.second].get_sports_book() <<  endl;
+                            cout << "hi" << endl;
+                        }
+                    }
+                }
+            }
+        }
 
+        //REQUIRES: n > 1
+        //MODIFIES: Nothing
+        //EFFECT: Returns all combination of two numbers 0 to n.
+        vector<pair<int, int>> combinations(int n){
+            vector<pair<int, int>> output;
+            for(int i = 0; i < n; ++i){
+                for(int j = i+1; j <=n; ++j){
+                    output.push_back({i,j});
+                }
+            }
+            return output;
+        }
         //REQUIRES: Two valid Bookie objects
         //MODIFIES: Nothing
         //EFFECT: Return TRUE if there is a arbitrage bet between both bookies
         bool is_arb(const Bookie & book1, const Bookie & book2){
-
+            if(odds_to_prob(book1.get_odds().first) + odds_to_prob(book2.get_odds().second) < 1){
+                return true;
+            } else if (odds_to_prob(book1.get_odds().second) + odds_to_prob(book2.get_odds().first) < 1){
+                return true;
+            } else {
+                return false;
+            }
         }
 
         //REQUIRES: Arbitrage opportunity between both books
@@ -51,7 +81,15 @@ class ArbFinder {
         //EFFECT: Prints how much money should be placed on which outome of book1
         // and does the same for bookie 2
         void money_distribution(const Bookie & book1, const Bookie & book2){
-
+            if(odds_to_prob(book1.get_odds().first) + odds_to_prob(book2.get_odds().second) < 1){
+                int total = odds_to_prob(book1.get_odds().first) + odds_to_prob(book2.get_odds().second);
+                cout << book1.get_sports_book() << " OVER: " << budget*odds_to_prob(book1.get_odds().first)/total << endl;
+                cout << book2.get_sports_book() << " UNDER: " << budget*odds_to_prob(book2.get_odds().second)/total << endl;
+            } else if (odds_to_prob(book1.get_odds().second) + odds_to_prob(book2.get_odds().first) < 1){
+                int total = odds_to_prob(book1.get_odds().second) + odds_to_prob(book2.get_odds().first);
+                cout << book1.get_sports_book() << " UNDER: " << budget*odds_to_prob(book1.get_odds().second)/total << endl;
+                cout << book2.get_sports_book() << " OVER: " << budget*odds_to_prob(book2.get_odds().first)/total << endl;
+            }
         }
 
     private:
