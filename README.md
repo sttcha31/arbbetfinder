@@ -2,6 +2,11 @@
 Arbitrage Bet Finder
 
 # Introduction
+##Available Websits
+    * DraftKing
+    * BetMGM
+##Coming Soon
+    * [bet365](https://www.va.bet365.com/?_h=Bh4f8Zb5idsEAAVTf9C40Q%3D%3D&btsffd=1#/AC/B18/C20604387/D43/E181378/F43/)
 
 # Usage
 
@@ -38,11 +43,23 @@ Arbitrage Bet Finder
     ```
     python3 betmgm_gamelinks.py
     ```
-6. Run mgmgamelinkcatcher
+6. Run mgm scraper
     ```
     python3 betmgm_scraper.py
     ```
-7. Run mgmgamelinkcatcher
+7. Run draft king scraper
     ```
     python3 draftking_scraper.py
+    ```
+8. Remove duplicates
+    ```
+    python3 duplicate.py
+    ```
+9. Compile main.exe
+    ```
+    clang++ -std=c++11 -o main  main.cpp Bookie.cpp
+    ```
+10. Run main.exe
+    ```
+    ./main.exe
     ```
