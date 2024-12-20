@@ -1,13 +1,17 @@
 import csv
-import multiprocessing
+from requests_html import AsyncHTMLSession
+import asyncio
 from requests_html import HTMLSession
 
-def get_player_overunder(category):
+async def get_player_overunder(category):
     link = "https://sportsbook.draftkings.com/leagues/basketball/nba?category=player-"+category+"&subcategory="+category+"-o%2Fu"
     overunders = []
-    session = HTMLSession()
-    response = session.get(link)
-    response.html.render()
+    # session = HTMLSession()
+    # response = session.get(link)
+    # response.html.render()
+    session = AsyncHTMLSession()
+    response = await session.get(link)
+    await response.html.arender(sleep=2)    
     games = response.html.find("tbody.sportsbook-table__body")
     for game in games:
         for playeroptions in game.find('tr'):
@@ -29,11 +33,23 @@ def write_to_csv(data):
         writer = csv.DictWriter(file, fieldnames=data[0].keys())
         writer.writerows(data)
 
-if __name__ == '__main__':
-    tasks = list()
-    tasks.append("points")
-    tasks.append("assists")
-    tasks.append("rebounds")
-    tasks.append("threes")
-    with multiprocessing.Pool(processes=len(tasks)) as pool:
-        results = pool.map(get_player_overunder, tasks)
+# if __name__ == '__main__':
+#     tasks = list()
+#     tasks.append("points")
+#     tasks.append("assists")
+#     tasks.append("rebounds")
+#     tasks.append("threes")
+#     with multiprocessing.Pool(processes=len(tasks)) as pool:
+#         results = pool.map(get_player_overunder, tasks)
+
+async def main():
+    tasks = ["points", "assists", "rebounds", "threes"]
+    await asyncio.gather(*(get_player_overunder(category) for category in tasks))
+
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except RuntimeError as e:
+        # Suppress "Event loop is closed" errors during Pyppeteer cleanup
+        if "Event loop is closed" not in str(e):
+            raise
