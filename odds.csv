@@ -1,0 +1,223 @@
+sports_book,player_name,category,value,over,under
+BetMGM,Joel Embiid,Rebound,8.5,-140,+105
+BetMGM,Nick Richards,Rebound,7.5,-110,-120
+BetMGM,Miles Bridges,Rebound,6.5,-125,-110
+BetMGM,Paul George,Rebound,5.5,-105,-125
+BetMGM,Kelly Oubre Jr.,Rebound,5.5,-145,+110
+BetMGM,Tyrese Maxey,Rebound,3.5,-135,+100
+BetMGM,Josh Green,Rebound,2.5,-185,+135
+BetMGM,Joel Embiid,Points,26.5,-105,-125
+BetMGM,Tyrese Maxey,Points,26.5,+110,-150
+BetMGM,Miles Bridges,Points,21.5,-120,-110
+BetMGM,Paul George,Points,19.5,-120,-110
+BetMGM,Kelly Oubre Jr.,Points,12.5,-125,-105
+BetMGM,Nick Richards,Points,10.5,-110,-120
+BetMGM,Josh Green,Points,9.5,-125,-105
+BetMGM,Tyrese Maxey,ThreePointer,3.5,+105,-140
+BetMGM,Paul George,ThreePointer,2.5,-140,+105
+BetMGM,Miles Bridges,ThreePointer,2.5,-110,-120
+BetMGM,Joel Embiid,ThreePointer,1.5,+105,-145
+BetMGM,Kelly Oubre Jr.,ThreePointer,1.5,+110,-150
+BetMGM,Josh Green,ThreePointer,1.5,-125,-110
+BetMGM,Paul George,Assists,5.5,+115,-150
+BetMGM,Tyrese Maxey,Assists,5.5,-130,+100
+BetMGM,Joel Embiid,Assists,3.5,-160,+120
+BetMGM,Miles Bridges,Assists,2.5,-165,+125
+BetMGM,Kelly Oubre Jr.,Assists,1.5,-130,+100
+BetMGM,Josh Green,Assists,1.5,-135,+100
+BetMGM,Nick Richards,Assists,0.5,-200,+150
+BetMGM,Tyrese Maxey,ThreePointer,3.5,+105,-140
+BetMGM,Paul George,ThreePointer,2.5,-140,+105
+BetMGM,Miles Bridges,ThreePointer,2.5,-110,-120
+BetMGM,Joel Embiid,ThreePointer,1.5,+105,-145
+BetMGM,Kelly Oubre Jr.,ThreePointer,1.5,+110,-150
+BetMGM,Josh Green,ThreePointer,1.5,-125,-110
+BetMGM,Giannis Antetokounmpo,Points,31.5,-105,-125
+BetMGM,Donovan Mitchell,Points,23.5,-130,+100
+BetMGM,Darius Garland,Points,20.5,-110,-120
+BetMGM,Evan Mobley,Points,16.5,-105,-130
+BetMGM,Jarrett Allen,Points,12.5,-105,-125
+BetMGM,Bobby Portis,Points,12.5,-135,+100
+BetMGM,Caris LeVert,Points,11.5,+100,-130
+BetMGM,Brook Lopez,Points,11.5,-110,-125
+BetMGM,Georges Niang,Points,7.5,-130,+100
+BetMGM,Taurean Prince,Points,6.5,-130,-105
+BetMGM,Andre Jackson Jr.,Points,4.5,-120,-110
+BetMGM,Paul George,Assists,5.5,+115,-150
+BetMGM,Tyrese Maxey,Assists,5.5,-130,+100
+BetMGM,Joel Embiid,Assists,3.5,-160,+120
+BetMGM,Miles Bridges,Assists,2.5,-165,+125
+BetMGM,Kelly Oubre Jr.,Assists,1.5,-130,+100
+BetMGM,Josh Green,Assists,1.5,-135,+100
+BetMGM,Nick Richards,Assists,0.5,-200,+150
+BetMGM,Joel Embiid,Points,26.5,-105,-125
+BetMGM,Tyrese Maxey,Points,26.5,+110,-150
+BetMGM,Miles Bridges,Points,21.5,-120,-110
+BetMGM,Paul George,Points,19.5,-120,-110
+BetMGM,Kelly Oubre Jr.,Points,12.5,-125,-105
+BetMGM,Nick Richards,Points,10.5,-110,-120
+BetMGM,Josh Green,Points,9.5,-125,-105
+BetMGM,Joel Embiid,Rebound,8.5,-140,+105
+BetMGM,Nick Richards,Rebound,7.5,-110,-120
+BetMGM,Miles Bridges,Rebound,6.5,-125,-110
+BetMGM,Paul George,Rebound,5.5,-105,-125
+BetMGM,Kelly Oubre Jr.,Rebound,5.5,-145,+110
+BetMGM,Tyrese Maxey,Rebound,3.5,-135,+100
+BetMGM,Josh Green,Rebound,2.5,-185,+135
+BetMGM,Donovan Mitchell,ThreePointer,3.5,-110,-120
+BetMGM,Darius Garland,ThreePointer,2.5,-145,+105
+BetMGM,Taurean Prince,ThreePointer,1.5,+115,-155
+BetMGM,Caris LeVert,ThreePointer,1.5,+115,-150
+BetMGM,Georges Niang,ThreePointer,1.5,-135,+100
+BetMGM,Bobby Portis,ThreePointer,1.5,+170,-250
+BetMGM,Brook Lopez,ThreePointer,1.5,-135,+100
+BetMGM,Andre Jackson Jr.,ThreePointer,0.5,-125,-105
+BetMGM,Giannis Antetokounmpo,ThreePointer,0.5,+240,-350
+BetMGM,Evan Mobley,ThreePointer,0.5,-145,+110
+BetMGM,Giannis Antetokounmpo,Assists,7.5,+105,-145
+BetMGM,Darius Garland,Assists,6.5,+105,-140
+BetMGM,Caris LeVert,Assists,4.5,+120,-160
+BetMGM,Donovan Mitchell,Assists,4.5,-155,+115
+BetMGM,Evan Mobley,Assists,2.5,+120,-160
+BetMGM,Taurean Prince,Assists,1.5,-105,-125
+BetMGM,Jarrett Allen,Assists,1.5,-120,-115
+BetMGM,Andre Jackson Jr.,Assists,1.5,+100,-135
+BetMGM,Georges Niang,Assists,1.5,+165,-225
+BetMGM,Bobby Portis,Assists,1.5,-145,+105
+BetMGM,Brook Lopez,Assists,1.5,+125,-160
+BetMGM,Giannis Antetokounmpo,Rebound,11.5,-110,-120
+BetMGM,Jarrett Allen,Rebound,10.5,-145,+105
+BetMGM,Evan Mobley,Rebound,8.5,-135,+100
+BetMGM,Bobby Portis,Rebound,7.5,-110,-120
+BetMGM,Brook Lopez,Rebound,4.5,-135,+100
+BetMGM,Donovan Mitchell,Rebound,4.5,-115,-115
+BetMGM,Georges Niang,Rebound,3.5,+100,-135
+BetMGM,Taurean Prince,Rebound,2.5,-130,-105
+BetMGM,Andre Jackson Jr.,Rebound,2.5,-140,+105
+BetMGM,Caris LeVert,Rebound,2.5,-165,+125
+BetMGM,Darius Garland,Rebound,2.5,+105,-140
+BetMGM,Tyrese Maxey,ThreePointer,3.5,+105,-140
+BetMGM,Paul George,ThreePointer,2.5,-140,+105
+BetMGM,Miles Bridges,ThreePointer,2.5,-110,-120
+BetMGM,Joel Embiid,ThreePointer,1.5,+105,-145
+BetMGM,Kelly Oubre Jr.,ThreePointer,1.5,+110,-150
+BetMGM,Josh Green,ThreePointer,1.5,-125,-110
+BetMGM,Shai Gilgeous-Alexander,Assists,5.5,-135,+100
+BetMGM,Jalen Williams,Assists,4.5,-105,-130
+BetMGM,Bam Adebayo,Assists,4.5,-125,-105
+BetMGM,Jimmy Butler,Assists,4.5,-135,+100
+BetMGM,Tyler Herro,Assists,3.5,-175,+130
+BetMGM,Isaiah Hartenstein,Assists,3.5,+100,-135
+BetMGM,Terry Rozier,Assists,2.5,+100,-135
+BetMGM,Alex Caruso,Assists,2.5,+145,-200
+BetMGM,Duncan Robinson,Assists,1.5,-165,+125
+BetMGM,Jaime Jaquez Jr.,Assists,1.5,+100,-135
+BetMGM,Luguentz Dort,Assists,1.5,+100,-130
+BetMGM,Cason Wallace,Assists,1.5,-135,+100
+BetMGM,Isaiah Joe,Assists,0.5,-210,+155
+BetMGM,Haywood Highsmith,Assists,0.5,-175,+130
+BetMGM,Donovan Mitchell,ThreePointer,3.5,-110,-120
+BetMGM,Darius Garland,ThreePointer,2.5,-145,+105
+BetMGM,Taurean Prince,ThreePointer,1.5,+115,-155
+BetMGM,Caris LeVert,ThreePointer,1.5,+115,-150
+BetMGM,Georges Niang,ThreePointer,1.5,-135,+100
+BetMGM,Bobby Portis,ThreePointer,1.5,+170,-250
+BetMGM,Brook Lopez,ThreePointer,1.5,-135,+100
+BetMGM,Andre Jackson Jr.,ThreePointer,0.5,-125,-105
+BetMGM,Giannis Antetokounmpo,ThreePointer,0.5,+240,-350
+BetMGM,Evan Mobley,ThreePointer,0.5,-145,+110
+BetMGM,Paul George,Assists,5.5,+115,-150
+BetMGM,Tyrese Maxey,Assists,5.5,-130,+100
+BetMGM,Joel Embiid,Assists,3.5,-160,+120
+BetMGM,Miles Bridges,Assists,2.5,-165,+125
+BetMGM,Kelly Oubre Jr.,Assists,1.5,-130,+100
+BetMGM,Josh Green,Assists,1.5,-135,+100
+BetMGM,Nick Richards,Assists,0.5,-200,+150
+BetMGM,Joel Embiid,Points,26.5,-105,-125
+BetMGM,Tyrese Maxey,Points,26.5,+110,-150
+BetMGM,Miles Bridges,Points,21.5,-120,-110
+BetMGM,Paul George,Points,19.5,-120,-110
+BetMGM,Kelly Oubre Jr.,Points,12.5,-125,-105
+BetMGM,Nick Richards,Points,10.5,-110,-120
+BetMGM,Josh Green,Points,9.5,-125,-105
+BetMGM,Giannis Antetokounmpo,Points,31.5,-105,-125
+BetMGM,Donovan Mitchell,Points,23.5,-130,+100
+BetMGM,Darius Garland,Points,20.5,-110,-120
+BetMGM,Evan Mobley,Points,16.5,-105,-130
+BetMGM,Jarrett Allen,Points,12.5,-105,-125
+BetMGM,Bobby Portis,Points,12.5,-135,+100
+BetMGM,Caris LeVert,Points,11.5,+100,-130
+BetMGM,Brook Lopez,Points,11.5,-110,-125
+BetMGM,Georges Niang,Points,7.5,-130,+100
+BetMGM,Taurean Prince,Points,6.5,-130,-105
+BetMGM,Andre Jackson Jr.,Points,4.5,-120,-110
+BetMGM,Shai Gilgeous-Alexander,Points,29.5,-120,-110
+BetMGM,Jalen Williams,Points,21.5,-105,-130
+BetMGM,Tyler Herro,Points,21.5,-120,-110
+BetMGM,Jimmy Butler,Points,17.5,-120,-115
+BetMGM,Bam Adebayo,Points,16.5,-125,-105
+BetMGM,Isaiah Hartenstein,Points,11.5,-110,-120
+BetMGM,Terry Rozier,Points,10.5,-135,+100
+BetMGM,Duncan Robinson,Points,9.5,-120,-110
+BetMGM,Luguentz Dort,Points,9.5,-110,-120
+BetMGM,Isaiah Joe,Points,6.5,+105,-140
+BetMGM,Jaime Jaquez Jr.,Points,6.5,-125,-105
+BetMGM,Cason Wallace,Points,6.5,-115,-120
+BetMGM,Haywood Highsmith,Points,5.5,-125,-105
+BetMGM,Alex Caruso,Points,5.5,-145,+110
+BetMGM,Giannis Antetokounmpo,Assists,7.5,+105,-145
+BetMGM,Darius Garland,Assists,6.5,+105,-140
+BetMGM,Caris LeVert,Assists,4.5,+120,-160
+BetMGM,Donovan Mitchell,Assists,4.5,-155,+115
+BetMGM,Evan Mobley,Assists,2.5,+120,-160
+BetMGM,Taurean Prince,Assists,1.5,-105,-125
+BetMGM,Jarrett Allen,Assists,1.5,-120,-115
+BetMGM,Andre Jackson Jr.,Assists,1.5,+100,-135
+BetMGM,Georges Niang,Assists,1.5,+165,-225
+BetMGM,Bobby Portis,Assists,1.5,-145,+105
+BetMGM,Brook Lopez,Assists,1.5,+125,-160
+BetMGM,Giannis Antetokounmpo,Rebound,11.5,-110,-120
+BetMGM,Jarrett Allen,Rebound,10.5,-145,+105
+BetMGM,Evan Mobley,Rebound,8.5,-135,+100
+BetMGM,Bobby Portis,Rebound,7.5,-110,-120
+BetMGM,Brook Lopez,Rebound,4.5,-135,+100
+BetMGM,Donovan Mitchell,Rebound,4.5,-115,-115
+BetMGM,Georges Niang,Rebound,3.5,+100,-135
+BetMGM,Taurean Prince,Rebound,2.5,-130,-105
+BetMGM,Andre Jackson Jr.,Rebound,2.5,-140,+105
+BetMGM,Caris LeVert,Rebound,2.5,-165,+125
+BetMGM,Darius Garland,Rebound,2.5,+105,-140
+BetMGM,Joel Embiid,Rebound,8.5,-140,+105
+BetMGM,Nick Richards,Rebound,7.5,-110,-120
+BetMGM,Miles Bridges,Rebound,6.5,-125,-110
+BetMGM,Paul George,Rebound,5.5,-105,-125
+BetMGM,Kelly Oubre Jr.,Rebound,5.5,-145,+110
+BetMGM,Tyrese Maxey,Rebound,3.5,-135,+100
+BetMGM,Josh Green,Rebound,2.5,-185,+135
+BetMGM,Tyler Herro,ThreePointer,3.5,-125,-105
+BetMGM,Duncan Robinson,ThreePointer,2.5,+135,-185
+BetMGM,Jalen Williams,ThreePointer,1.5,-175,+130
+BetMGM,Isaiah Joe,ThreePointer,1.5,-110,-120
+BetMGM,Terry Rozier,ThreePointer,1.5,-150,+110
+BetMGM,Luguentz Dort,ThreePointer,1.5,-145,+105
+BetMGM,Haywood Highsmith,ThreePointer,1.5,+175,-250
+BetMGM,Shai Gilgeous-Alexander,ThreePointer,1.5,-190,+140
+BetMGM,Alex Caruso,ThreePointer,1.5,+165,-225
+BetMGM,Jaime Jaquez Jr.,ThreePointer,0.5,+120,-160
+BetMGM,Bam Adebayo,ThreePointer,0.5,-185,+135
+BetMGM,Cason Wallace,ThreePointer,0.5,-210,+160
+BetMGM,Jimmy Butler,ThreePointer,0.5,+100,-135
+BetMGM,Isaiah Hartenstein,Rebound,11.5,-105,-125
+BetMGM,Bam Adebayo,Rebound,10.5,-145,+110
+BetMGM,Jalen Williams,Rebound,5.5,-125,-105
+BetMGM,Shai Gilgeous-Alexander,Rebound,5.5,+120,-155
+BetMGM,Jimmy Butler,Rebound,5.5,-120,-110
+BetMGM,Tyler Herro,Rebound,4.5,-155,+120
+BetMGM,Luguentz Dort,Rebound,4.5,+125,-165
+BetMGM,Terry Rozier,Rebound,3.5,+125,-165
+BetMGM,Duncan Robinson,Rebound,2.5,+120,-160
+BetMGM,Isaiah Joe,Rebound,2.5,+110,-150
+BetMGM,Jaime Jaquez Jr.,Rebound,2.5,-115,-120
+BetMGM,Cason Wallace,Rebound,2.5,-155,+120
+BetMGM,Haywood Highsmith,Rebound,2.5,-145,+105
+BetMGM,Alex Caruso,Rebound,2.5,-125,-105
