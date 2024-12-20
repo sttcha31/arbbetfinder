@@ -34,3 +34,15 @@ Arbitrage Bet Finder
     ```
     Xvfb :99 & export DISPLAY=:99
     ```
+5. Run mgmgamelinkcatcher
+    ```
+    python3 betmgm_gamelinks.py
+    ```
+6. Run mgmgamelinkcatcher
+    ```
+    python3 betmgm_scraper.py
+    ```
+7. Run mgmgamelinkcatcher
+    ```
+    python3 draftking_scraper.py
+    ```

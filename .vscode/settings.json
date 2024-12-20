@@ -50,6 +50,7 @@
         "variant": "cpp",
         "vector": "cpp",
         "algorithm": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "regex": "cpp"
     }
 }

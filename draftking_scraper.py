@@ -18,7 +18,14 @@ async def get_player_overunder(category):
             overunder = {}
             overunder["sportsbook"] = "DraftKing"
             overunder["player_name"]= playeroptions.find('th',first=True).find('div',first=True).find('a',first=True).find('span',first=True).text
-            overunder["category"] = category
+            if(category =='points'):
+                overunder["category"] = "Points"
+            if(category =='assists'):
+                overunder["category"] = "Assists"
+            if(category =='rebounds'):
+                overunder["category"] = "Rebound"
+            if(category =='threes'):
+                overunder["category"] = "ThreePointer"
             overunder["value"]= playeroptions.find('td')[0].find('div',first=True).find('div',first=True).find('div',first=True).find('div',first=True).find('span')[2].text
             overunder["over"] =  playeroptions.find('td')[0].find('div',first=True).find('div',first=True).find('div.sportsbook-outcome-body-wrapper', first="0").find("div")[2].find("div")[2].find("span", first=True).text
             overunder["under"] =  playeroptions.find('td')[1].find('div',first=True).find('div',first=True).find('div.sportsbook-outcome-body-wrapper', first="0").find("div")[2].find("div")[2].find("span", first=True).text
@@ -33,14 +40,6 @@ def write_to_csv(data):
         writer = csv.DictWriter(file, fieldnames=data[0].keys())
         writer.writerows(data)
 
-# if __name__ == '__main__':
-#     tasks = list()
-#     tasks.append("points")
-#     tasks.append("assists")
-#     tasks.append("rebounds")
-#     tasks.append("threes")
-#     with multiprocessing.Pool(processes=len(tasks)) as pool:
-#         results = pool.map(get_player_overunder, tasks)
 
 async def main():
     tasks = ["points", "assists", "rebounds", "threes"]

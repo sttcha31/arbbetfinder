@@ -1,4 +1,5 @@
 #include "Bookie.hpp"
+#include <tuple>
 #include <string>
 #include <iostream>
 #include "csvstream.hpp"
@@ -8,6 +9,16 @@
 #include <map>
 
 using namespace std;
+
+struct TupleHash {
+    std::size_t operator()(const std::tuple<string, string, double>& t) const {
+        auto hash1 = std::hash<std::string>{}(get<0>(t));
+        auto hash2 = std::hash<std::string>{}(get<1>(t));
+        auto hash3 = std::hash<double>{}(get<2>(t));
+        return hash1 ^ (hash2 << 1) ^ (hash3 << 2); // Combine the two hashes
+    }
+};
+
 class ArbFinder {
     public:
         ArbFinder(string & odds_file_in, double budget_in): budget(budget_in) {
@@ -29,7 +40,7 @@ class ArbFinder {
                     int over = stoi(row["over"]);
                     int under = stoi(row["under"]);
 
-                    hash_map[{category, value}].push_back(Bookie(sports_book, player_name, over, under));
+                    hash_map[make_tuple(player_name, category, value)].push_back(Bookie(sports_book, player_name, over, under));
                 }  
 
             } catch (const csvstream_exception &e){
@@ -46,8 +57,8 @@ class ArbFinder {
                     for(auto combination : combinations((*it).second.size())){
                         if(is_arb((*it).second[combination.first], (*it).second[combination.second])){
                             cout << "Arbitrage Opportunity Found Between " << (*it).second[combination.first].get_sports_book() 
-                            << "and" << (*it).second[combination.second].get_sports_book() <<  endl;
-                            cout << (*it).second[combination.first].get_player_name() << ": " << (*it).first.second << (*it).first.first << endl;
+                            << " and " << (*it).second[combination.second].get_sports_book() <<  endl;
+                            cout << get<0>((*it).first) << ": " << get<2>((*it).first) << " " << get<1>((*it).first) << endl;
                             money_distribution((*it).second[combination.first], (*it).second[combination.second]);
                         }
                     }
@@ -58,11 +69,11 @@ class ArbFinder {
         //REQUIRES: n > 1
         //MODIFIES: Nothing
         //EFFECT: Returns all combination of two numbers 0 to n.
-        vector<pair<int, int>> combinations(int n){
-            vector<pair<int, int>> output;
-            for(int i = 0; i < n; ++i){
-                for(int j = i+1; j <=n; ++j){
-                    output.push_back({i,j});
+        vector< pair<int, int> > combinations(int n){
+            vector< pair<int, int> > output;
+            for(int i = 0; i < n-1; ++i){
+                for(int j = i+1; j <n; ++j){
+                    output.push_back(make_pair(i,j));
                 }
             }
             return output;
@@ -71,9 +82,9 @@ class ArbFinder {
         //MODIFIES: Nothing
         //EFFECT: Return TRUE if there is a arbitrage bet between both bookies
         bool is_arb(const Bookie & book1, const Bookie & book2){
-            if(odds_to_prob(book1.get_odds().first) + odds_to_prob(book2.get_odds().second) < 1){
+            if((odds_to_prob(book1.get_odds().first) + odds_to_prob(book2.get_odds().second)) < 1.0){
                 return true;
-            } else if (odds_to_prob(book1.get_odds().second) + odds_to_prob(book2.get_odds().first) < 1){
+            } else if ((odds_to_prob(book1.get_odds().second) + odds_to_prob(book2.get_odds().first)) < 1.0){
                 return true;
             } else {
                 return false;
@@ -85,27 +96,34 @@ class ArbFinder {
         //EFFECT: Prints how much money should be placed on which outome of book1
         // and does the same for bookie 2
         void money_distribution(const Bookie & book1, const Bookie & book2){
-            if(odds_to_prob(book1.get_odds().first) + odds_to_prob(book2.get_odds().second) < 1){
-                int total = odds_to_prob(book1.get_odds().first) + odds_to_prob(book2.get_odds().second);
+            if((odds_to_prob(book1.get_odds().first) + odds_to_prob(book2.get_odds().second)) < 1.0){
+                double total = odds_to_prob(book1.get_odds().first) + odds_to_prob(book2.get_odds().second);
                 cout << book1.get_sports_book() << " OVER: " << budget*odds_to_prob(book1.get_odds().first)/total << endl;
                 cout << book2.get_sports_book() << " UNDER: " << budget*odds_to_prob(book2.get_odds().second)/total << endl;
-            } else if (odds_to_prob(book1.get_odds().second) + odds_to_prob(book2.get_odds().first) < 1){
-                int total = odds_to_prob(book1.get_odds().second) + odds_to_prob(book2.get_odds().first);
+                cout << "Profit: $" << odds_to_payout(budget*odds_to_prob(book1.get_odds().first)/total, book1.get_odds().first) - (budget*odds_to_prob(book2.get_odds().second)/total)
+                << " - $" << odds_to_payout(budget*odds_to_prob(book2.get_odds().second)/total, book2.get_odds().second) - (budget*odds_to_prob(book1.get_odds().first)/total) << endl;
+            } else if ((odds_to_prob(book1.get_odds().second) + odds_to_prob(book2.get_odds().first)) < 1.0){
+                double total = odds_to_prob(book1.get_odds().second) + odds_to_prob(book2.get_odds().first);
                 cout << book1.get_sports_book() << " UNDER: " << budget*odds_to_prob(book1.get_odds().second)/total << endl;
                 cout << book2.get_sports_book() << " OVER: " << budget*odds_to_prob(book2.get_odds().first)/total << endl;
+                cout << "Profit: $" << odds_to_payout(budget*odds_to_prob(book1.get_odds().second)/total, book1.get_odds().second) - (budget*odds_to_prob(book2.get_odds().first)/total)
+                << " - $" << odds_to_payout(budget*odds_to_prob(book2.get_odds().first)/total, book2.get_odds().first) - (budget*odds_to_prob(book1.get_odds().second)/total) << endl;
             }
         }
 
+
     private:
         double budget;
-        unordered_map<pair<string, double>, vector<Bookie>> hash_map;
+        unordered_map< tuple<string, string, double>, vector<Bookie>, TupleHash> hash_map;
 
 };
 
 
 
 int main() {
-
+    string filename = "odds.csv";
+    ArbFinder bot(filename, 1000);
+    bot.bet_finder();
     return 0;
 }
 

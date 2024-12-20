@@ -23,5 +23,12 @@ double odds_to_prob(double odd){
     if(odd<0){
         return (-odd/(-odd+100));
     }
-        return (100/(odd+100));
+    return (100/(odd+100));
+}
+
+double odds_to_payout(double budget, double odd){
+    if(odd<0){
+        return budget * ((100/-odd)+1.0) - budget;
+    }
+    return budget * ((odd/100) + 1.0) - budget;
 }

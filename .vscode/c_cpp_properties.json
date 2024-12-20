@@ -3,9 +3,7 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/**",
-                "/Library/Frameworks/Python.framework/Versions/3.13/include/python3.13",
-                "-I/Library/Frameworks/Python.framework/Versions/3.13/include/python3.13"
+                "${workspaceFolder}/**"
             ],
             "defines": [],
             "macFrameworkPath": [
