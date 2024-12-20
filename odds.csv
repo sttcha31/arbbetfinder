@@ -1,50 +1,89 @@
-BetMGM,Alperen Sengun,Points,21.5,-105,-105
-BetMGM,CJ McCollum,Points,20.5,-125,-125
-BetMGM,Dejounte Murray,Points,19.5,-125,-125
-BetMGM,Jalen Green,Points,18.5,-110,-110
-BetMGM,Trey Murphy III,Points,15.5,-120,-120
-BetMGM,Fred VanVleet,Points,14.5,-130,-130
-BetMGM,Amen Thompson,Points,12.5,-105,-105
-BetMGM,Jabari Smith Jr,Points,12.5,-105,-105
-BetMGM,Dillon Brooks,Points,12.5,-135,-135
-BetMGM,Herbert Jones,Points,11.5,-105,-105
-BetMGM,Brandon Boston Jr.,Points,11.5,-110,-110
-BetMGM,Tari Eason,Points,10.5,-135,-135
-BetMGM,Yves Missi,Points,9.5,-110,-110
-BetMGM,CJ McCollum,ThreePointer,3.5,+125,+125
-BetMGM,Trey Murphy III,ThreePointer,2.5,-120,-120
-BetMGM,Jalen Green,ThreePointer,2.5,+125,+125
-BetMGM,Fred VanVleet,ThreePointer,2.5,-120,-120
-BetMGM,Herbert Jones,ThreePointer,1.5,+135,+135
-BetMGM,Dejounte Murray,ThreePointer,1.5,-165,-165
-BetMGM,Dillon Brooks,ThreePointer,1.5,-175,-175
-BetMGM,Brandon Boston Jr.,ThreePointer,1.5,+165,+165
-BetMGM,Amen Thompson,ThreePointer,0.5,+220,+220
-BetMGM,Tari Eason,ThreePointer,0.5,-200,-200
-BetMGM,Alperen Sengun,ThreePointer,0.5,+150,+150
-BetMGM,Dejounte Murray,Assists,6.5,-140,-140
-BetMGM,Fred VanVleet,Assists,6.5,-105,-105
-BetMGM,Alperen Sengun,Assists,5.5,+100,+100
-BetMGM,CJ McCollum,Assists,3.5,-110,-110
-BetMGM,Amen Thompson,Assists,2.5,+120,+120
-BetMGM,Herbert Jones,Assists,2.5,+115,+115
-BetMGM,Trey Murphy III,Assists,2.5,+125,+125
-BetMGM,Jalen Green,Assists,2.5,-120,-120
-BetMGM,Jabari Smith Jr,Assists,1.5,+160,+160
-BetMGM,Dillon Brooks,Assists,1.5,-130,-130
-BetMGM,Brandon Boston Jr.,Assists,1.5,-200,-200
-BetMGM,Tari Eason,Assists,0.5,-210,-210
-BetMGM,Yves Missi,Assists,0.5,-250,-250
-BetMGM,Alperen Sengun,Rebound,10.5,-140,-140
-BetMGM,Yves Missi,Rebound,10.5,+105,+105
-BetMGM,Amen Thompson,Rebound,7.5,+100,+100
-BetMGM,Jabari Smith Jr,Rebound,7.5,-105,-105
-BetMGM,Tari Eason,Rebound,6.5,-110,-110
-BetMGM,Dejounte Murray,Rebound,6.5,+105,+105
-BetMGM,Trey Murphy III,Rebound,5.5,+100,+100
-BetMGM,Herbert Jones,Rebound,4.5,+120,+120
-BetMGM,Jalen Green,Rebound,4.5,-140,-140
-BetMGM,CJ McCollum,Rebound,4.5,+125,+125
-BetMGM,Fred VanVleet,Rebound,4.5,+105,+105
-BetMGM,Dillon Brooks,Rebound,3.5,-145,-145
-BetMGM,Brandon Boston Jr.,Rebound,2.5,-155,-155
+sports_book,player_name,category,value,over,under
+DraftKing,Anfernee Simons,threes,3.5,+124,−160
+DraftKing,Jerami Grant,threes,2.5,+100,−130
+DraftKing,Michael Porter Jr.,threes,2.5,+114,−145
+DraftKing,Jamal Murray,threes,2.5,+140,−180
+DraftKing,Shaedon Sharpe,threes,1.5,−154,+120
+DraftKing,Nikola Jokic,threes,1.5,−115,−115
+DraftKing,Deni Avdija,threes,1.5,+124,−160
+DraftKing,Toumani Camara,threes,1.5,+124,−160
+DraftKing,Aaron Gordon,threes,0.5,−238,+180
+DraftKing,Malik Monk,threes,2.5,−115,−115
+DraftKing,Austin Reaves,threes,2.5,+100,−130
+DraftKing,De'Aaron Fox,threes,2.5,+130,−166
+DraftKing,LeBron James,threes,1.5,−180,+140
+DraftKing,Keegan Murray,threes,1.5,−154,+120
+DraftKing,D'Angelo Russell,threes,1.5,−120,−110
+DraftKing,Kevin Huerter,threes,1.5,−115,−115
+DraftKing,Dalton Knecht,threes,1.5,+114,−145
+DraftKing,Rui Hachimura,threes,1.5,+120,−154
+DraftKing,Keon Ellis,threes,1.5,+130,−166
+DraftKing,Max Christie,threes,0.5,−210,+160
+DraftKing,Domantas Sabonis,threes,0.5,−160,+124
+DraftKing,Anthony Davis,threes,0.5,−140,+110
+DraftKing,DeMar DeRozan,threes,0.5,−130,+100
+DraftKing,Nikola Jokic,assists,8.5,−140,+110
+DraftKing,Jamal Murray,assists,5.5,−154,+120
+DraftKing,Anfernee Simons,assists,5.5,+105,−135
+DraftKing,Scoot Henderson,assists,4.5,−125,−105
+DraftKing,Aaron Gordon,assists,3.5,+120,−154
+DraftKing,Deni Avdija,assists,2.5,−120,−110
+DraftKing,Shaedon Sharpe,assists,2.5,−120,−110
+DraftKing,Jerami Grant,assists,2.5,+110,−140
+DraftKing,LeBron James,assists,8.5,−105,−125
+DraftKing,De'Aaron Fox,assists,5.5,−145,+114
+DraftKing,Domantas Sabonis,assists,5.5,−130,+100
+DraftKing,Malik Monk,assists,5.5,−105,−125
+DraftKing,Austin Reaves,assists,4.5,−130,+100
+DraftKing,DeMar DeRozan,assists,3.5,−135,+105
+DraftKing,D'Angelo Russell,assists,3.5,−115,−115
+DraftKing,Anthony Davis,assists,3.5,+135,−175
+DraftKing,Nikola Jokic,points,29.5,−105,−125
+DraftKing,Anfernee Simons,points,19.5,−120,−110
+DraftKing,Jamal Murray,points,19.5,−115,−115
+DraftKing,Michael Porter Jr.,points,17.5,−105,−125
+DraftKing,Jerami Grant,points,16.5,−120,−110
+DraftKing,Shaedon Sharpe,points,16.5,−110,−120
+DraftKing,Aaron Gordon,points,14.5,−105,−125
+DraftKing,Deandre Ayton,points,13.5,−105,−125
+DraftKing,Christian Braun,points,11.5,−120,−110
+DraftKing,Deni Avdija,points,11.5,−110,−120
+DraftKing,Russell Westbrook,points,11.5,+100,−130
+DraftKing,Scoot Henderson,points,9.5,−120,−110
+DraftKing,Toumani Camara,points,8.5,−125,−105
+DraftKing,Julian Strawther,points,8.5,−115,−115
+DraftKing,Anthony Davis,points,26.5,−105,−125
+DraftKing,De'Aaron Fox,points,23.5,−125,−105
+DraftKing,LeBron James,points,22.5,−110,−120
+DraftKing,DeMar DeRozan,points,20.5,−110,−120
+DraftKing,Domantas Sabonis,points,19.5,−120,−110
+DraftKing,Malik Monk,points,17.5,−105,−125
+DraftKing,Austin Reaves,points,16.5,−110,−120
+DraftKing,Rui Hachimura,points,12.5,−110,−120
+DraftKing,Keegan Murray,points,12.5,−105,−125
+DraftKing,D'Angelo Russell,points,9.5,+100,−130
+DraftKing,Kevin Huerter,points,8.5,−125,−105
+DraftKing,Max Christie,points,7.5,−105,−125
+DraftKing,Dalton Knecht,points,6.5,−130,+100
+DraftKing,Keon Ellis,points,5.5,−135,+105
+DraftKing,Nikola Jokic,rebounds,12.5,−120,−110
+DraftKing,Deandre Ayton,rebounds,9.5,−115,−115
+DraftKing,Michael Porter Jr.,rebounds,6.5,+110,−140
+DraftKing,Aaron Gordon,rebounds,5.5,−130,+100
+DraftKing,Deni Avdija,rebounds,5.5,+120,−154
+DraftKing,Toumani Camara,rebounds,4.5,−140,+110
+DraftKing,Christian Braun,rebounds,4.5,+124,−160
+DraftKing,Shaedon Sharpe,rebounds,3.5,−160,+124
+DraftKing,Jamal Murray,rebounds,3.5,−145,+114
+DraftKing,Jerami Grant,rebounds,3.5,+110,−140
+DraftKing,Anfernee Simons,rebounds,2.5,−160,+124
+DraftKing,Domantas Sabonis,rebounds,13.5,+105,−135
+DraftKing,Anthony Davis,rebounds,11.5,−120,−110
+DraftKing,LeBron James,rebounds,7.5,−115,−115
+DraftKing,Keegan Murray,rebounds,6.5,+100,−130
+DraftKing,Rui Hachimura,rebounds,5.5,+114,−145
+DraftKing,De'Aaron Fox,rebounds,4.5,−115,−115
+DraftKing,Malik Monk,rebounds,3.5,−140,+110
+DraftKing,DeMar DeRozan,rebounds,3.5,−105,−125
+DraftKing,Austin Reaves,rebounds,3.5,+114,−145
+DraftKing,Max Christie,rebounds,3.5,+124,−160

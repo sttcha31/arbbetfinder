@@ -1,13 +1,10 @@
-import multiprocessing
+import csv
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 op = webdriver.ChromeOptions()
-# op.add_argument('--headless')
-# op.add_argument("--window-size=1920,1080")
-# op.add_argument('--disable-gpu')
-# op.add_argument('--no-sandbox')
+
 op.add_argument("--enable-features=SameSiteByDefaultCookies,CookiesWithoutSameSiteMustBeSecure")
 op.add_argument("--enable-javascript")
 
@@ -26,4 +23,8 @@ def get_game_links():
             output.append(game.find_element(By.CLASS_NAME, "grid-event-wrapper").find_element(By.TAG_NAME, "a").get_attribute("href") + "\n")
     return output
 
+headers = ["sports_book", "player_name", "category", "value", "over", "under"]
+with open("odds.csv", mode="w", newline="") as file:
+    writer = csv.writer(file)
+    writer.writerow(headers)
 get_game_links()

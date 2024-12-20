@@ -12,21 +12,6 @@ op = webdriver.ChromeOptions()
 op.add_argument("--enable-features=SameSiteByDefaultCookies,CookiesWithoutSameSiteMustBeSecure")
 op.add_argument("--enable-javascript")
 
-def get_game_links():
-    driver = webdriver.Chrome(options=op)
-    driver.get("https://sports.mi.betmgm.com/en/sports/basketball-7/betting/usa-9/nba-6004")
-    wait = WebDriverWait(driver, 20)
-    #CHECK: following line's XPATH might chance from day to day
-    output = list()                                                
-    driver.get_screenshot_as_file("screenshot.png")
-    table = wait.until(EC.presence_of_element_located((By.XPATH, './/*[@id="main-view"]/ms-widget-layout/ms-widget-slot/ms-composable-widget/ms-widget-slot/ms-tabbed-grid-widget/ms-grid/div/ms-event-group')))
-    games = table.find_elements(By.XPATH, "./*")
-    with open("mgmgames.txt", "w") as file: 
-        for game in games:
-            file.write(game.find_element(By.CLASS_NAME, "grid-event-wrapper").find_element(By.TAG_NAME, "a").get_attribute("href") + "\n")
-            output.append(game.find_element(By.CLASS_NAME, "grid-event-wrapper").find_element(By.TAG_NAME, "a").get_attribute("href") + "\n")
-    return output
-    
 
 def get_player_overunder(link, category):
     overunders = []
@@ -61,15 +46,13 @@ def write_to_csv(data):
         writer.writerows(data)
 
 if __name__ == '__main__':
-    headers = ["sports_book", "player_name", "category", "value", "over", "under"]
-    with open("odds.csv", mode="w", newline="") as file:
-        writer = csv.writer(file)
-        writer.writerow(headers)
     tasks = list()
-    tasks.append(("https://sports.va.betmgm.com/en/sports/events/new-orleans-pelicans-at-houston-rockets-16687910", "Points"))
-    tasks.append(("https://sports.va.betmgm.com/en/sports/events/new-orleans-pelicans-at-houston-rockets-16687910", "Assists"))
-    tasks.append(("https://sports.va.betmgm.com/en/sports/events/new-orleans-pelicans-at-houston-rockets-16687910", "Rebound"))
-    tasks.append(("https://sports.va.betmgm.com/en/sports/events/new-orleans-pelicans-at-houston-rockets-16687910", "ThreePointer"))
-    with multiprocessing.Pool(processes=len(tasks)) as pool:
-        results = pool.map(process_task, tasks)
+    with open("mgmgames.txt", mode="r") as links:
+        for link in links:
+            tasks.append((link, "Points"))
+            tasks.append((link, "Assists"))
+            tasks.append((link, "Rebound"))
+            tasks.append((link, "ThreePointer"))
+            with multiprocessing.Pool(processes=len(tasks)) as pool:
+                results = pool.map(process_task, tasks)
 
