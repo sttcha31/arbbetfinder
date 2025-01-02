@@ -19,7 +19,7 @@ def get_player_overunder(link, category):
     driver.get(link+"?market=Players:"+category)
     wait = WebDriverWait(driver, 20)
     if category == "ThreePointer":
-        button = wait.until(EC.presence_of_element_located(("/html/body/vn-app/vn-dynamic-layout-slot[5]/vn-main/main/div/ms-main/div[1]/ms-main-column/div/ng-component/div/ms-option-group-list/div/ms-option-panel/div/ms-player-props-option-group/ms-option-panel-bottom-action/div")))
+        button = wait.until(EC.presence_of_element_located((By.XPATH, './/*[@id="main-view"]/ng-component/div/ms-option-group-list/div/ms-option-panel/div/ms-player-props-option-group/ms-option-panel-bottom-action/div')))
     else:
         button = wait.until(EC.presence_of_element_located((By.XPATH, './/*[@id="main-view"]/ng-component/div/ms-option-group-list/div[1]/ms-option-panel[1]/div/ms-player-props-option-group/ms-option-panel-bottom-action/div')))
     button.click()
