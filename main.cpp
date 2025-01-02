@@ -7,6 +7,7 @@
 #include <vector>
 #include <unordered_map>
 #include <map>
+#include <cmath>
 
 using namespace std;
 
@@ -91,6 +92,10 @@ class ArbFinder {
             }
         }
 
+        double roundToNearest50(double value) {
+            return round(value / 50.0) * 50.0;
+        }
+
         //REQUIRES: Arbitrage opportunity between both books
         //MODIFIES: Nothing
         //EFFECT: Prints how much money should be placed on which outome of book1
@@ -98,16 +103,27 @@ class ArbFinder {
         void money_distribution(const Bookie & book1, const Bookie & book2){
             if((odds_to_prob(book1.get_odds().first) + odds_to_prob(book2.get_odds().second)) < 1.0){
                 double total = odds_to_prob(book1.get_odds().first) + odds_to_prob(book2.get_odds().second);
-                cout << book1.get_sports_book() << " OVER: " << budget*odds_to_prob(book1.get_odds().first)/total << endl;
-                cout << book2.get_sports_book() << " UNDER: " << budget*odds_to_prob(book2.get_odds().second)/total << endl;
-                cout << "Profit: $" << odds_to_payout(budget*odds_to_prob(book1.get_odds().first)/total, book1.get_odds().first) - (budget*odds_to_prob(book2.get_odds().second)/total)
-                << " - $" << odds_to_payout(budget*odds_to_prob(book2.get_odds().second)/total, book2.get_odds().second) - (budget*odds_to_prob(book1.get_odds().first)/total) << endl;
+
+                cout << book1.get_sports_book() << " OVER: " << "(" << book1.get_odds().first << ") $"
+                << roundToNearest50(budget*odds_to_prob(book1.get_odds().first)/total) << endl;
+
+                cout << book2.get_sports_book() << " UNDER: " << "(" << book2.get_odds().second << ") $"
+                << roundToNearest50(budget*odds_to_prob(book2.get_odds().second)/total) << endl;
+
+                cout << "Profit: $" << odds_to_payout(roundToNearest50(budget*odds_to_prob(book1.get_odds().first)/total), book1.get_odds().first) - roundToNearest50(budget*odds_to_prob(book2.get_odds().second)/total)
+                << " - $" << odds_to_payout(roundToNearest50(budget*odds_to_prob(book2.get_odds().second)/total), book2.get_odds().second) - roundToNearest50(budget*odds_to_prob(book1.get_odds().first)/total) << endl;
+            
             } else if ((odds_to_prob(book1.get_odds().second) + odds_to_prob(book2.get_odds().first)) < 1.0){
                 double total = odds_to_prob(book1.get_odds().second) + odds_to_prob(book2.get_odds().first);
-                cout << book1.get_sports_book() << " UNDER: " << budget*odds_to_prob(book1.get_odds().second)/total << endl;
-                cout << book2.get_sports_book() << " OVER: " << budget*odds_to_prob(book2.get_odds().first)/total << endl;
-                cout << "Profit: $" << odds_to_payout(budget*odds_to_prob(book1.get_odds().second)/total, book1.get_odds().second) - (budget*odds_to_prob(book2.get_odds().first)/total)
-                << " - $" << odds_to_payout(budget*odds_to_prob(book2.get_odds().first)/total, book2.get_odds().first) - (budget*odds_to_prob(book1.get_odds().second)/total) << endl;
+
+                cout << book2.get_sports_book() << " OVER: " << "(" << book2.get_odds().first << ") $"
+                << roundToNearest50(budget*odds_to_prob(book2.get_odds().first)/total) << endl;
+
+                cout << book1.get_sports_book() << " UNDER: " << "(" << book1.get_odds().second << ") $"
+                << roundToNearest50(budget*odds_to_prob(book1.get_odds().second)/total) << endl;
+
+                cout << "Profit: $" << odds_to_payout(roundToNearest50(budget*odds_to_prob(book1.get_odds().second)/total), book1.get_odds().second) - roundToNearest50(budget*odds_to_prob(book2.get_odds().first)/total)
+                << " - $" << odds_to_payout(roundToNearest50(budget*odds_to_prob(book2.get_odds().first)/total), book2.get_odds().first) - roundToNearest50(budget*odds_to_prob(book1.get_odds().second)/total) << endl;
             }
         }
 
@@ -122,7 +138,7 @@ class ArbFinder {
 
 int main() {
     string filename = "odds.csv";
-    ArbFinder bot(filename, 1000);
+    ArbFinder bot(filename, 2000);
     bot.bet_finder();
     return 0;
 }

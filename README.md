@@ -2,10 +2,10 @@
 Arbitrage Bet Finder
 
 # Introduction
-##Available Websits
+## Available Websits
     * DraftKing
     * BetMGM
-##Coming Soon
+## Coming Soon
     * [bet365](https://www.va.bet365.com/?_h=Bh4f8Zb5idsEAAVTf9C40Q%3D%3D&btsffd=1#/AC/B18/C20604387/D43/E181378/F43/)
 
 # Usage
