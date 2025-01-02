@@ -26,9 +26,14 @@ async def get_player_overunder(category):
                 overunder["category"] = "Rebound"
             if(category =='threes'):
                 overunder["category"] = "ThreePointer"
+    
             overunder["value"]= playeroptions.find('td')[0].find('div',first=True).find('div',first=True).find('div',first=True).find('div',first=True).find('span')[2].text
-            overunder["over"] =  playeroptions.find('td')[0].find('div',first=True).find('div',first=True).find('div.sportsbook-outcome-body-wrapper', first="0").find("div")[2].find("div")[2].find("span", first=True).text
-            overunder["under"] =  playeroptions.find('td')[1].find('div',first=True).find('div',first=True).find('div.sportsbook-outcome-body-wrapper', first="0").find("div")[2].find("div")[2].find("span", first=True).text
+            if (over:=playeroptions.find('td')[0].find('div',first=True).find('div',first=True).find('div.sportsbook-outcome-body-wrapper', first="0").find("div")[2].find("div")[2].find("span", first=True).text)[0] != "+":
+                over = "-" + over[1:]
+            overunder["over"] =  over
+            if (under:=playeroptions.find('td')[1].find('div',first=True).find('div',first=True).find('div.sportsbook-outcome-body-wrapper', first="0").find("div")[2].find("div")[2].find("span", first=True).text)[0] != "+":
+                under = "-" + under[1:]
+            overunder["under"] = under
             overunders.append(overunder)
     write_to_csv(overunders)
     print(overunders)
