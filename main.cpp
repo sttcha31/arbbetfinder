@@ -55,6 +55,7 @@ class ArbFinder {
         void bet_finder() {
             for(auto it=hash_map.begin(); it!=hash_map.end(); ++it){
                 if((*it).second.size()>1){
+                    cout << (*it).second.size() << endl;
                     for(auto combination : combinations((*it).second.size())){
                         if(is_arb((*it).second[combination.first], (*it).second[combination.second])){
                             cout << "Arbitrage Opportunity Found Between " << (*it).second[combination.first].get_sports_book() 
