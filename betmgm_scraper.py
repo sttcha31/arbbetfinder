@@ -48,13 +48,13 @@ def write_to_csv(data):
         writer.writerows(data)
 
 if __name__ == '__main__':
-    tasks = list()
     with open("mgmgames.txt", mode="r") as links:
+        tasks = list()
         for link in links:
             tasks.append((link, "Points"))
             tasks.append((link, "Assists"))
             tasks.append((link, "Rebound"))
             tasks.append((link, "ThreePointer"))
-            with multiprocessing.Pool(processes=len(tasks)) as pool:
-                results = pool.map(process_task, tasks)
+        with multiprocessing.Pool(processes=len(tasks)) as pool:
+            results = pool.map(process_task, tasks)
 

@@ -55,8 +55,9 @@ class ArbFinder {
         void bet_finder() {
             for(auto it=hash_map.begin(); it!=hash_map.end(); ++it){
                 if((*it).second.size()>1){
-                    cout << (*it).second.size() << endl;
                     for(auto combination : combinations((*it).second.size())){
+                        cout << (odds_to_prob((*it).second[combination.first].get_odds().first) + odds_to_prob((*it).second[combination.second].get_odds().second))
+                        << " " << (odds_to_prob((*it).second[combination.first].get_odds().second) + odds_to_prob((*it).second[combination.second].get_odds().first)) << endl;
                         if(is_arb((*it).second[combination.first], (*it).second[combination.second])){
                             cout << "Arbitrage Opportunity Found Between " << (*it).second[combination.first].get_sports_book() 
                             << " and " << (*it).second[combination.second].get_sports_book() <<  endl;
